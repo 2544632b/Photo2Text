@@ -20,10 +20,10 @@ public class Photo2Text
     
     public int[] getNearestCharPerPixel(int x, int y, int target_weight, int target_height)
     {
-        // f(x, y) = f(w/w * x, h * h * y)
+        // f(x, y) = f(W / target_weight * x, H / target_height * y)
         int X = W / target_weight * x;
         int Y = H / target_height * y;
-        return new int[] { X, Y };
+        return new int[] { X, Y };  // Pos write back
     }
     
     /*
