@@ -18,6 +18,21 @@ public class Photo2Text
         }
     }
     
+    public int[] getNearestCharPerPixel(int x, int y, int target_weight, int target_height)
+    {
+        // f(x, y) = f(w/w * x, h * h * y)
+        int X = W / target_weight * x;
+        int Y = H / target_height * y;
+        return new int[] { X, Y };
+    }
+    
+    /*
+    public int[] getLinearCharPerPixel(int x, int y, int target_weight, int target_height)
+    {
+
+    }
+    */
+    
     public Char getCharsFromPixel(int r, int g, int b, int alpha = 256)
     {
         if(r == null || g == null || b == null || alpha == null)
