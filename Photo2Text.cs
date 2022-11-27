@@ -6,9 +6,12 @@ public class Photo2Text
     private static String ascii_lists = "$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\\|()1{}[]?-_+~<>i!lI;:,\"^`'.  ";
     private Int32 W = 0;
     private Int32 H = 0;
+    private static String target_photo_;
     
     public static void Main(System.String[] args)
     {
+        this.target_photo_ = args[0];
+        
         Photo2Text P2T = new Photo2Text();
         String str = P2T.asciiPicPerPil();
         FileStream F = new FileStream("res.txt", FileMode.OpenOrCreate, FileAccess.ReadWrite);
